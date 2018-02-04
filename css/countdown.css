@@ -1,0 +1,44 @@
+html
+{
+	font-family:sans-serif;
+}
+body
+{
+	color: #F4F4F4;
+	background-color: #333333;
+	background-image: url("../img/antelope0.jpg");
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+html, body, .container-table
+{
+    height: 100%;
+}
+.container-table
+{
+    display: table;
+}
+.vertical-center-row
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+h3{font-size: 36px;}
+h1{font-size: 96px;}
+h2{font-size: 36px;}
+@media (max-width: 48em)
+{
+	h3{font-size: 27px;}
+	h1{font-size: 72px;}
+	h2{font-size: 27px;}
+}
+@media (max-width: 36em)
+{
+	h3{font-size: 14px;}
+	h1{font-size: 36px;}
+	h2{font-size: 14px;}
+}
+
