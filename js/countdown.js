@@ -27,20 +27,20 @@ if(period < 0)
 {
 	var title  = getValueForKey('x', "New Year's Day " + (sourceYY + 1));
 	var targetYY = Math.floor(getValueForKey('YYYY', sourceYY + 1));
-	var targetMM = Math.floor(getValueForKey('MM', 1)) - 1;
-	var targetDD = Math.floor(getValueForKey('DD', 1)) - 1;
-	var targethh = Math.floor(getValueForKey('hh'));
-	var targetmm = Math.floor(getValueForKey('mm'));
+	var targetMM = Math.floor(getValueForKey('MM', 1)) - 1; // zero-based month counter
+	var targetDD = Math.floor(getValueForKey('DD', 1));
+	var targethh = Math.floor(getValueForKey('hh', 0));
+	var targetmm = Math.floor(getValueForKey('mm', 0));
 	var targetDate = new Date(targetYY, targetMM, targetDD, targethh, targetmm, 0, 0);
 }
 else
 {
 	var title  = getValueForKey('x', " ");
-	var sourceMM = sourceDate.getMonth() + 1;
-	var sourceDD = sourceDate.getDate() + 1;
+	var sourceMM = sourceDate.getMonth();
+	var sourceDD = sourceDate.getDate();
 	var sourcehh = sourceDate.getHours();
 	var sourcemm = sourceDate.getMinutes() + period;
-	var targetDate = new Date(sourceYY, sourceMM - 1, sourceDD - 1, sourcehh, sourcemm, 0, 0);
+	var targetDate = new Date(sourceYY, sourceMM, sourceDD, sourcehh, sourcemm, 0, 0);
 }
 var zeroHour = targetDate.getTime();
 
