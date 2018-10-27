@@ -142,6 +142,7 @@ var x = setInterval(function()
 			if((dd == 0) && (hh == 0) && (mm == 0))
 			{
 				commentString = "time's up";
+				$('body').css("background-image", "url(./img/antelope1.jpg)");
 			}
 		}
 	}
