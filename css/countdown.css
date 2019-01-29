@@ -41,4 +41,11 @@ h2{font-size: 36px;}
 	h1{font-size: 36px;}
 	h2{font-size: 14px;}
 }
-
+div.license
+{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
