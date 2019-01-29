@@ -32,6 +32,7 @@ if(period < 0)
 	var targethh = Math.floor(getValueForKey('hh', 0));
 	var targetmm = Math.floor(getValueForKey('mm', 0));
 	var targetDate = new Date(targetYY, targetMM, targetDD, targethh, targetmm, 0, 0);
+	var lastWords = getValueForKey('y', "Happy New Year!" + (sourceYY + 1));
 }
 else
 {
@@ -40,17 +41,19 @@ else
 	var sourceDD = sourceDate.getDate();
 	var sourcehh = sourceDate.getHours();
 	var sourcemm = sourceDate.getMinutes() + period;
-	var targetDate = new Date(sourceYY, sourceMM, sourceDD, sourcehh, sourcemm, 0, 0);
+	var sourcess = sourceDate.getSeconds() + 2; // round up for nicer display
+	var targetDate = new Date(sourceYY, sourceMM, sourceDD, sourcehh, sourcemm, sourcess, 0);
+	var lastWords = getValueForKey('y', "time's up" + (sourceYY + 1));
 }
 var zeroHour = targetDate.getTime();
 
 
-var x = setInterval(function()
+setInterval(function()
 {
 	var countdown = zeroHour - new Date().getTime();
 	if(countdown < 0)
 	{
-		countdown -= 1000; // compensate for Math.floor
+		countdown -= 1000; // compensate for Math.floor on negative numbers
 	}
 	var dd = Math.floor( Math.abs(countdown)                          / (24 * 60 * 60 * 1000));
 	var hh = Math.floor((Math.abs(countdown) % (24 * 60 * 60 * 1000)) /      (60 * 60 * 1000));
@@ -134,14 +137,15 @@ var x = setInterval(function()
 		{
 			if(dd == 0)
 			{
-				commentString = "Happy New Year!";
+				commentString = lastWords;
+				// TODO: fireworks
 			}
 		}
 		else
 		{
 			if((dd == 0) && (hh == 0) && (mm == 0))
 			{
-				commentString = "time's up";
+				commentString = lastWords;
 				$('body').css("background-image", "url(./img/antelope1.jpg)");
 			}
 		}
