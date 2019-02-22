@@ -32,7 +32,7 @@ if(period < 0)
 	var targethh = Math.floor(getValueForKey('hh', 0));
 	var targetmm = Math.floor(getValueForKey('mm', 0));
 	var targetDate = new Date(targetYY, targetMM, targetDD, targethh, targetmm, 0, 0);
-	var lastWords = getValueForKey('y', "Happy New Year!" + (sourceYY + 1));
+	var lastWords = getValueForKey('y', "Happy New Year!");
 }
 else
 {
@@ -43,7 +43,7 @@ else
 	var sourcemm = sourceDate.getMinutes() + period;
 	var sourcess = sourceDate.getSeconds() + 2; // round up for nicer display
 	var targetDate = new Date(sourceYY, sourceMM, sourceDD, sourcehh, sourcemm, sourcess, 0);
-	var lastWords = getValueForKey('y', "time's up" + (sourceYY + 1));
+	var lastWords = getValueForKey('y', "time's up");
 }
 var zeroHour = targetDate.getTime();
 
