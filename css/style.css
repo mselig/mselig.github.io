@@ -258,3 +258,13 @@ html {
 .featureImg {
     margin-bottom: 5px;
 }
+.btn-secondary {
+    color: #EEEEEE;
+    background-color: #757575;
+    border-color: #696969;
+}
+.btn-secondary:hover {
+    background-color: #5c5c5c;
+    border-color: #4a4a4a;
+}
+
