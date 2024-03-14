@@ -84,7 +84,7 @@ body {
     background-image: url('../img/opaque75.png');
 }
 
-.fix-height {
+.fix-height { /* obsolete? */
     height: 100%;
 }
 @media screen and (min-width: 992px) {
